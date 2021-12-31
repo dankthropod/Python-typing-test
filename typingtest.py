@@ -17,24 +17,26 @@ def generateTest():
 
     # Converting lines of list to select a random phrase
     listLen = len(mylines) - 1 
-    return (mylines[random.randint(0,listLen)])
+    testContent = (mylines[random.randint(0,listLen)])
+    return testContent
 
 def speedCalc():
     # words / time passed (assuming it is 5)
+    testContent = generateTest()
     start = time.time()
-    test = input(print(generateTest()))
+    test = input(print(testContent))
     end = time.time()
     timePassed = (end - start) 
-    generateTestLen = len(generateTest())
+    testContentLen = len(testContent)
 
-    return generateTest(), timePassed, ((generateTestLen/5)/timePassed)*60
+    return test, testContent, timePassed, ((testContentLen/5)/timePassed)*60
 
 def spellCheck():
-    test, timePassed, wpm = speedCalc()
+    test, testContent, timePassed, wpm = speedCalc()
     diff = 0
     correctChars = 0
 
-    file_A = generateTest()
+    file_A = testContent
     file_B = test
 
     #read_A=open(file_A,'r').read()
